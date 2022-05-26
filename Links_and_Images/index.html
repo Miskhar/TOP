@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+ <html lang="eng">
+     
+    <head>
+        <meta charset="UTF-8">
+        <title>Homepage</title>
+    </head>
+
+    <body>
+        <h1>Homepage</h1>
+
+        To create a link in HTML, we use the "Anchor" element. Inside the opening tag of the anchor,
+        we need to use the "href" (HTML Reference) attribute to tell give our anchor tag a destination.
+        Any anchor without an href attribute will be plaintext; once the href is added, it becomes a
+        blue hyperlink. You can use href to link to other HTML documents, PDF's, images, videos, etc. 
+        Here is an example of a link:
+        <p><a href="https://www.theodinproject.com/about">Click Me!</a></p>
+        
+        <h1>Absolute and Relative Links:</h1>
+        Links to pages on other websites are called <em>"Absolute Links."</em> An absolute link will
+        typically look like this: <strong>protocol://domain/path</strong>. The link above is an absolute
+        link, as it points to The Odin Project's About page.
+
+        <p><em>Relative Links</em> are links that point to pages within our own website. Since a Relative
+        Link is contained within our own project, it assumes that the protocol is the same as the page we
+        created the link on. Relative links only contain the file path to the other page <em>relative</em>
+        to the page it is linked from. Here is an example of a Relative Link:</p>
+
+        <a href="./pages/about.html">About</a>
+
+        <p>Note: Normally we just want our index.html file in the root of our project folder, and we want
+            our other pages to be in a seperate directory. To make sure that our relative link is robust,
+            we will want to prepend our relative path with "./". In this case, we use the href attribute:
+            <p><strong>href="./pages/about.html"</strong>></p>
+        </p>
+    </body>
+
+ </html>
