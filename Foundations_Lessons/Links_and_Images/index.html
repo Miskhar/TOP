@@ -33,6 +33,32 @@
             we will want to prepend our relative path with "./". In this case, we use the href attribute:
             <p><strong>href="./pages/about.html"</strong>></p>
         </p>
+
+        <h1>Images</h1>
+
+        To display an image in HTML we use the <img> element. Unlike other elements, the <img> tag is empty,
+        which means that it doesn't have a closing tag. Instead of wrapping content in an opening and closing
+        tag, it embeds an image into the page using an src attribute whic tells the browser where the image is.
+        The <img> element works much like the href attribute for anchor tags; it can embed an image using both
+        absolute and relative paths.
+
+        <p>For example: using an absolute path we can display an image located on The Odin Project Website:</p>
+
+        <img
+        src="https://www.theodinproject.com/mstile-310x310.png" alt="The Odin Project logo">
+
+        <p> Relative path images are assumed to be in the same path as the rest of your webpage.Here is an 
+            example of an image with a relative path:
+            <p>
+                <img
+                    src="./images/TOP_dog.jpg" alt="An image of some TOP member's dog">
+            </p>
+        </p>
+
+        <p> Besides the src attribute, each image should have an <strong>alt</strong>>, or and <em>alternative
+            text</em> attribute. The alt attribute is used to describe an image, and will be used in place of 
+            the image if it cannot be loaded. It is also used by screen readers to describe the image for the 
+            visually impaired.</p>
     </body>
 
  </html>
