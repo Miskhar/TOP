@@ -9,6 +9,9 @@
     <body>
         <h1>Homepage</h1>
 
+        <!-- This is a top of page anchor, which you can link to from the bottom of the page -->
+        <a name="top"></a>
+
         To create a link in HTML, we use the "Anchor" element. Inside the opening tag of the anchor,
         we need to use the "href" (HTML Reference) attribute to tell give our anchor tag a destination.
         Any anchor without an href attribute will be plaintext; once the href is added, it becomes a
@@ -55,10 +58,19 @@
             </p>
         </p>
 
-        <p> Besides the src attribute, each image should have an <strong>alt</strong>>, or and <em>alternative
+        <p> Besides the src attribute, each image should have an <strong>alt</strong>, or and <em>alternative
             text</em> attribute. The alt attribute is used to describe an image, and will be used in place of 
             the image if it cannot be loaded. It is also used by screen readers to describe the image for the 
-            visually impaired.</p>
+            visually impaired.
+        </p>
+
+        Finally, this is a link to the top of the page. You have to make sure to place an anchor at the top of 
+        the page, which we will link to from below:
+
+        <p>
+            <a href="#top">Back to top of page</a>
+        </p>
+
     </body>
 
  </html>
