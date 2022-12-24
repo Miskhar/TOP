@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS-Lesson-1</title>
+    </head>
+    <body>
+        <!-- Adding 7 to a number -->
+        <label for="add7Box"><strong>Pick a number to add 7 to:</strong></label><br>
+        <input name="add7Box" type="text" id="add7Box"><br>
+        <!-- Add button that calls add7 on click -->
+        <input id="add7Button" type="button" value="Add 7!" onclick="add7();" /><br><br><br>
+
+        <!-- Muktiplying two numbers -->
+        <strong>Now, lets multiple two numbers:</strong><br>
+        <label for="mulNum1">First number to multiply:</label><br>
+        <input id="mulNum1" type="text" id="mulNum1"><br>
+        <label for="mulNum2">Second number to multiply:</label><br>
+        <input id="mulNum2" type="text" id="mulNum2">
+        <input id="multiplyNumbersButton" type="button" value="Multiply!" onclick="multiply2Numbers();"/><br><br><br>
+
+        <!-- Capitalization of string: -->
+        <strong>Enter a string (a word) and have it capitalized:</strong><br>
+        <label for="capString">Word to capitalize:</label><br>
+        <input id="capString" type="text" id="capString"><br>
+        <input id="capStringButton" type="button" value="Capitalize!" onclick="capitalizeString();"/><br><br><br>
+
+        <!-- JS Code inside of the HTML -->
+        <script>
+            function add7 () {
+                let number = Number(document.getElementById('add7Box').value);
+                if (isNaN(number)) {
+                    alert("Please choose a number.");
+                    return;
+                }
+                alert("The new number is: " + (number += 7));
+            }
+
+            function multiply2Numbers () {
+                let number1 = Number(document.getElementById('mulNum1').value);
+                let number2 = Number(document.getElementById('mulNum2').value);
+                if (isNaN(number1) || isNaN(number2)) {
+                    alert("Please choose two numbers");
+                    return;
+                }
+                alert(`${number1} multiplied by ${number2} is: ` + (number1 *= number2));
+            }
+
+            function capitalizeString() {
+                // Check if field is empty or contains a number
+                let capString = document.getElementById('capString').value;
+                let firstChar = capString.charAt(0);
+                let capStringNumCheck = Number(firstChar);
+                if (firstChar === "" || !(isNaN(capStringNumCheck))) {
+                    alert("Please enter a word.")
+                    return;
+                }
+            }
+        </script>
+    </body>
+</html>
