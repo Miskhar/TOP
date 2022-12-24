@@ -48,6 +48,7 @@
 
             function capitalizeString() {
                 let capString = document.getElementById('capString').value;
+                capString = capString.toLowerCase();
                 let firstChar = capString.charAt(0);
                 let capStringNumCheck = Number(firstChar);
                 // Check if the first char is blank, a number, or a special char and if so, ask for a word that starts w a letter
@@ -55,6 +56,8 @@
                     alert("Please enter a word that begins with a letter.")
                     return;
                 }
+                cappedString = capString.charAt(0).toUpperCase() + capString.slice(1)
+                return alert(cappedString);
             }
 
             // Crazy regex to check if the first char has a special char
