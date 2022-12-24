@@ -25,6 +25,12 @@
         <input id="capString" type="text" id="capString"><br>
         <input id="capStringButton" type="button" value="Capitalize!" onclick="capitalizeString();"/><br><br><br>
 
+        <!-- Last letter of a string -->
+        <strong>Let's find the last letter of a string!</strong><br>
+        <label for="lastCharOfString">Enter a word to find the final character:</label><br>
+        <input id="lastCharOfString" type="text" id="lastCharOfString"><br>
+        <input id="lastCharButton" type="button" value="Find last char!" onclick="findLastChar();"/><br><br><br>
+
         <!-- JS Code inside of the HTML -->
         <script>
             function add7 () {
@@ -64,6 +70,12 @@
             function firstCharLetter (firstChar) {
                     var regex =  /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
                     return regex.test(firstChar);
+            }
+
+            function findLastChar() {
+                let stringToSearch = document.getElementById('lastCharOfString').value;
+                let lastChar = stringToSearch.slice(-1);
+                return alert("The last char is: " + lastChar);
             }
         </script>
     </body>
