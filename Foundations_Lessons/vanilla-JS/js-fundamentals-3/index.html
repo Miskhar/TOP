@@ -47,14 +47,20 @@
             }
 
             function capitalizeString() {
-                // Check if field is empty or contains a number
                 let capString = document.getElementById('capString').value;
                 let firstChar = capString.charAt(0);
                 let capStringNumCheck = Number(firstChar);
-                if (firstChar === "" || !(isNaN(capStringNumCheck))) {
-                    alert("Please enter a word.")
+                // Check if the first char is blank, a number, or a special char and if so, ask for a word that starts w a letter
+                if (firstChar === "" || !(isNaN(capStringNumCheck)) || (firstCharLetter(firstChar))) {
+                    alert("Please enter a word that begins with a letter.")
                     return;
                 }
+            }
+
+            // Crazy regex to check if the first char has a special char
+            function firstCharLetter (firstChar) {
+                    var regex =  /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
+                    return regex.test(firstChar);
             }
         </script>
     </body>
