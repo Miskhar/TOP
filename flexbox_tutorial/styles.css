@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu-container {
+    color: #fff;
+    background-color: #5995DA;
+    padding: 20px 0;
+    /* let's turn this into a flex container: */
+    display: flex;
+    /* now lets define the horizontal alignment of the items in the flex container: */
+    justify-content: center;
+}
+
+.menu {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* "margin: auto" in flexbox are special...they can be used as an alternative to an extra "<div>" when trying to align a group of items to
+the left or right of a container. think of "margins: auto" as a divider for flex items in the same container */
+.signup {
+    /* "margins: auto" eat up all the extra space in a container, so instead of distributing the items equally, this moves the .signup
+    and any following items (.login, in this case) to the right side of the container */
+    margin-left: auto;
+}
+
+.login {
+    margin-left: 20px;
+}
+
+.header-container {
+    color: #5995DA;
+    background-color: #D6E9FE;
+    display: flex;
+    justify-content: center;
+}
+
+
+.header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* uncomment for an example of the "stretch value, and comment out the .header above */
+/*
+.header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.social,
+.logo,
+.subscribe {
+    border: 1px solid #5995DE;
+}
+*/
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    /* uncomment to make this a column, instead of a row */
+    /* flex-direction: column; */
+    /* when we change flex-direction to column, we also change the direction of the "justify-content" property...it not refers to the
+    container's vertical alignment, not its horizontal alignment. for that, we need to use "align-items" */
+    /* align-items: center; */
+
+    /* we can also reverse the order of the rows on a per-row basis (3-2-1 on row one, instead of 5-4-3 on row one) using the property
+    "row-reverse". un-commment the next 2 lines to see this */
+    /* flex-direction: row-reverse; */
+    /* align-items: center; */
+
+    flex-direction: row;
+    align-items: center;
+}
+
+.photo-grid-item {
+    border: 1px solid #fff;
+    width: 300px;
+    height: 300px;
+}
+
+/* if we wanted to change the order of our photo items, we can increase or decrease their "order" property (note: you can use negative
+numbers for the order property) */
+.first-item {
+    order: 1;
+}
+
+/* we can also order items individually using the "align-self" property. adding this to a flex item overrides the "align-items" value
+from it's container (note: margins/padding work as expected for them)  */
+.social,
+.subscribe {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-item {
+    border: 1px solid #fff;
+    background-color: #d6e9fe;
+    height: 200px;
+    /* "flex: 1" tells the items to stretch to match the width of the footer, and since they all have the same weight (1), they will stretch
+    evenly. where "justify-content" lets us place space between/around items, the "flex" property allows us to play with the size of the 
+    items themselves */
+    flex: 1;
+}
+
+/* uncomment below to see how we can give an item more growth in a flexbox */
+/* .footer-three { */
+    /* setting the flex weight higher on this item will cause it to stretch more than the others in the container (in this case, twice as
+    much as the other items */
+    /* flex: 2; } */
+
+    .footer-one,
+    .footer-three {
+        background-color: #5995DA;
+        /* without "flex: initial;" we would inherit the value "flex: 1;" from the .footer-item, which would cause our width to be 
+        ignored */
+        flex: initial;
+        width: 300px;
+    }
