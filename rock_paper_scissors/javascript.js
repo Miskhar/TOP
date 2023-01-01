@@ -4,6 +4,8 @@ let cpuRand = 0;
 let playerSelection = null;
 let whoWins = null;
 let tempWeap = null;
+let winner = null;
+let cpuSelection = null;
 // Convert the strings to a numbers
 cpuRand = Number(cpuRand);
 playerScore = Number(playerScore);
@@ -72,7 +74,7 @@ function roundLogic(playerSelection, cpuSelection) {
 
 
 function playRound(playerSelection) {
-    let cpuSelection = cpuWeaponSelect();
+    cpuSelection = cpuWeaponSelect();
     whoWins = roundLogic(playerSelection, cpuSelection);
     if (whoWins.toLowerCase() === "player") {
         ++playerScore;
@@ -83,6 +85,37 @@ function playRound(playerSelection) {
         tempWeap = cpuSelection;
         cpuSelection = `Enemy chose ${tempWeap}, so it is a DRAW!`;
     }
+    scoreUpdate(playerScore, cpuScore, cpuSelection);
+    if (Number(playerScore) === 5) {
+        winner = "You"
+        console.log("Player wins!!!");
+        resetButton(winner);
+    } else if (Number(cpuScore) === 5){
+        winner = "Enemy"
+        console.log("Enemy wins!!!");
+        resetButton(winner)
+    }
+}
+
+function resetButton (winner) {
+    // We create the reset button; we need to use inline styling (I think), and we had to use a <p> tag to get the second sentence on a new line
+    if (document.getElementById("reset_button").style.display='none') {
+        document.getElementById("reset_button").style.display='flex';
+    }
+    if (winner.toLowerCase() === "you") {
+        document.getElementById("reset_button").innerHTML = `<button onclick="resetGame();" style="background: red; font-size: 2em; padding: 1em; border-radius: 12px">${winner} Won!<p>Try your luck again?</p></button>`
+    }
+    if (winner.toLowerCase() === "enemy") {
+        document.getElementById("reset_button").innerHTML = `<button onclick="resetGame();" style="background: red; font-size: 2em; padding: 1em; border-radius: 12px">The ${winner} Won!<p>You might get them next time...</p></button>`
+    }
+    
+}
+
+function resetGame() {
+    playerScore = 0;
+    cpuScore = 0;
+    playerSelection = whoWins = tempWeap = winner = null;
+    document.getElementById("reset_button").style.display='none';
     scoreUpdate(playerScore, cpuScore, cpuSelection);
 }
 

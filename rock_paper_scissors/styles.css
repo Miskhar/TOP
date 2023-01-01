@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -54,4 +55,12 @@ body {
 
 .cpu_score {
     display: flex;
+}
+
+/* Style the div that holds the reset button */
+#reset_button {
+    display: flex;
+    margin-top: 2em;
+    justify-content: center;
+    align-items: center;
 }
