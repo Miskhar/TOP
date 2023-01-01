@@ -98,10 +98,11 @@ function playRound(playerSelection) {
 }
 
 function resetButton (winner) {
-    // We create the reset button; we need to use inline styling (I think), and we had to use a <p> tag to get the second sentence on a new line
+    // Add a check to see if we have previously hidden the reset button, and if so, display it as a flex item
     if (document.getElementById("reset_button").style.display='none') {
         document.getElementById("reset_button").style.display='flex';
     }
+    // We create the reset button; we need to use inline styling (I think), and we had to use a <p> tag to get the second sentence on a new line
     if (winner.toLowerCase() === "you") {
         document.getElementById("reset_button").innerHTML = `<button onclick="resetGame();" style="background: red; font-size: 2em; padding: 1em; border-radius: 12px">${winner} Won!<p>Try your luck again?</p></button>`
     }
@@ -117,6 +118,7 @@ function resetGame() {
     playerSelection = whoWins = tempWeap = winner = null;
     document.getElementById("reset_button").style.display='none';
     scoreUpdate(playerScore, cpuScore, cpuSelection);
+    
 }
 
 function playerSelectedRock() {
