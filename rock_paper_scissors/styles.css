@@ -30,11 +30,28 @@ body {
     margin-top: 2em;
 }
 
+.enemy_chose {
+    display: flex;
+    color: red;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin-top: 2rem;
+}
+
 .score_boxes {
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: red;
     font-size: 2em;
+    margin-top: 3rem;
 }
 
+.player_score {
+    display: flex;
+}
+
+.cpu_score {
+    display: flex;
+}

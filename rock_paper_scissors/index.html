@@ -16,10 +16,13 @@
         </div>
         <div class="selection_buttons">
             <input type="image" src="./images/rock.png" class="rock_button" width="300px" height="300px" onclick="playerSelectedRock();">
-            <input type="image" src="./images/paper.png" class="paper_button" width="300px" height="300px">
-            <input type="image" src="./images/scissors.png" class="scissors_button" width="300px" height="300px">
+            <input type="image" src="./images/paper.png" class="paper_button" width="300px" height="300px" onclick="playerSelectedPaper();">
+            <input type="image" src="./images/scissors.png" class="scissors_button" width="300px" height="300px" onclick="playerSelectedScissors();">
         </div>
 
+        <div class="enemy_chose">
+            <p id="enemyChoice">Enemy Chose: </p>
+        </div>
         <div class="score_boxes">
             <div class="player_score">
                 <p id="pScore">Player Score: 0 </p>
